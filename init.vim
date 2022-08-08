@@ -27,6 +27,8 @@ Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-surround'
+
+Plug 'lark-parser/vim-lark-syntax'
 call plug#end()
 
 lua << EOF
@@ -53,3 +55,6 @@ set scrolloff=5
 " Macros for marking tasks on my todo list
 let @p = 'A --j'
 let @o = 'A -ccj'
+
+" Update todos on save
+autocmd BufWritePost .todo silent! !python3.10 ~/Desktop/ao/ap/todo.py
